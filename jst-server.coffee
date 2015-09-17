@@ -14,7 +14,7 @@ try
   low.load('db.json')
 catch
   console.error "Cannot load db.json"
-DB = low('checkins').sortBy('key').value().reverse()
+DB = low('checkins').sortBy('stamp').value().reverse()
 
 exports.startServer = (port, path, callback) ->
   app = express()

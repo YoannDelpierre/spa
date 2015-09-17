@@ -13,5 +13,6 @@ module.exports = Backbone.Collection.extend({
   // Définition du modèle à exploiter lors d'ajouts, fetches, etc.
   // Du coup, on peut passer juste des hashes d'attributs, ça
   // convertit tout seul.
-  model: require('./check_in')
+  model: require('./check_in'),
+  url: '/checkins'
 });
