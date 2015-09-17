@@ -6,9 +6,12 @@
 var $ = require('jquery');
 var moment = require('moment');
 
+// views
 var View = require('./view');
-var userName = require('lib/notifications');
+var CheckInView = require('./checkin_view');
 
+// vars
+var userName = require('lib/notifications');
 var dateFormat = 'DD/MM/YYYY HH:mm:ss';
 
 module.exports = View.extend({
@@ -17,6 +20,8 @@ module.exports = View.extend({
   afterRender: function () {
     // call startClock
     this.startClock();
+    // call checkinview
+    this.checkInView();
   },
   getRenderData: function () {
     return {
@@ -31,5 +36,10 @@ module.exports = View.extend({
     setInterval(function() {
         self.clock.text(self.getRenderData().now);
     }, 1000);
+  },
+  checkInView: function () {
+    new CheckInView({
+      el: this.$('#checkInUI')
+    }).render();
   }
 });
