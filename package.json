@@ -23,7 +23,6 @@
       "data-cover-never": "node_modules"
     }
   },
-
   "//": "Dep groups below: Brunch & plugins / Brunch production output / Dev server / Tests",
   "devDependencies": {
     "brunch": "^1.7.17",
@@ -33,12 +32,10 @@
     "stylus-brunch": "^1.7.0",
     "jade-brunch": "^1.8.1",
     "appcache-brunch": "^1.7.1",
-
     "clean-css": "^2.2.12",
     "clean-css-brunch": "> 1.0 < 1.8",
     "uglify-js": "^2.4.15",
     "uglify-js-brunch": "> 1.0 < 1.8",
-
     "body-parser": "^1.5.2",
     "backbone": "^1.1.2",
     "errorhandler": "^1.1.1",
@@ -46,12 +43,14 @@
     "lowdb": "^0.3.1",
     "morgan": "^1.2.2",
     "socket.io": "1.1.0",
-
     "chai": "^1.9.2",
     "cheerio": "^0.17.0",
     "istanbul": "^0.3.2",
     "jquery": "^2.1.1",
     "mocha": "^1.21.4",
     "sinon": "^1.10.3"
+  },
+  "dependencies": {
+    "auto-reload-brunch": "^1.8.0"
   }
 }

@@ -1,10 +1,10 @@
 include _mixins
 
 header.row
-  p#geoloc.lead.pull-left Je suis…
+  p#geoloc.lead.pull-left Je suis… #{geoloc}
   .pull-right: +button('info') Chercher des endroits à proximité
 
-ul#places.row.list-unstyled FIXME:placeList
+ul#places.row.list-unstyled #{placeList}
 
 form#submission.row.form-inline(role="form")
   .col-sm-9.col-xs-12
