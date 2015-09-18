@@ -18,6 +18,9 @@ var store = require('lib/persistance');
 module.exports = View.extend({
     template: require('./templates/check_in'),
     poiTemplate: require('./templates/places'),
+    subscriptions: {
+        'connectivity:online': 'fetchPOI'
+    },
     events: {
         // can use a class for example click header .btn-info
         'click header button': 'fetchPOI',
@@ -42,6 +45,12 @@ module.exports = View.extend({
             }
         },
         '#comment': 'comment',
+        'header button': {
+            attributes: [{
+                name: 'disabled',
+                observe: 'checkIsOnline'
+            }]
+        },
         'button[type=submit]': {
             attributes: [{
                 name: 'disabled',

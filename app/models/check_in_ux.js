@@ -7,6 +7,9 @@ var _ = require('underscore');
 
 var Backbone = require('backbone');
 
+// svc
+var cnxSvc = require('lib/connectivity');
+
 module.exports = Backbone.Model.extend({
     defaults: {
         lat: 0,
@@ -25,8 +28,17 @@ module.exports = Backbone.Model.extend({
             self.set('checkInForbidden', self.get('placeId') === null);
         }
 
-        // set checkInForbidden at model start
+        function checkIsOnline () {
+            self.set('checkIsOnline', !cnxSvc.isOnline());
+        }
+
+        // set data on model
         checkCheckEnabled();
+        checkIsOnline();
+
+        // subscribe
+        Backbone.Mediator.subscribe('connectivity:online', checkIsOnline);
+        Backbone.Mediator.subscribe('connectivity:offline', checkIsOnline);
     },
     getPoi: function () {
         var id = this.get('placeId');

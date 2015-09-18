@@ -14,5 +14,9 @@ module.exports = Backbone.Collection.extend({
   // Du coup, on peut passer juste des hashes d'attributs, ça
   // convertit tout seul.
   model: require('./check_in'),
-  url: '/checkins'
+  url: '/checkins',
+  // comparator into collection
+  comparator: function (item1, item2) {
+    return item2.get('stamp') - item1.get('stamp');
+  }
 });

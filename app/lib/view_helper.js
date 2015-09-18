@@ -6,10 +6,9 @@ module.exports = {
   // Petit helper formattant un check-in pour obtenir son moment
   // de création formatté en HH:mm.
   checkInMoment: function checkInMoment(checkIn) {
-    var key = checkIn.hasOwnProperty('key') ? checkIn.key : checkIn;
-    return moment(+key).format('HH:mm');
+    var stamp = checkIn.hasOwnProperty('stamp') ? checkIn.stamp : checkIn;
+    return moment(+stamp).format('HH:mm');
   },
-
   // Petit helper formattant un nombre de secondes avec un niveau
   // d'arrondi plus parlant (tel quel sous la minute, en minutes sinon).
   secondsToMinutes: function secondsToMinutes(secs) {
