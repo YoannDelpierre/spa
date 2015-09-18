@@ -32,6 +32,9 @@ exports.startServer = (port, path, callback) ->
   app.get '/', (request, response) ->
     response.sendfile 'public/index.html'
 
+  app.get '/check-in/:id', (request, response) ->
+    response.sendfile 'public/index.html'
+
   # Sync endpoints (Ajax)
 
   app.get '/checkins', (request, response) ->

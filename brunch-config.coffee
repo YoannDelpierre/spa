@@ -23,12 +23,6 @@ exports.config =
 
   plugins:
     appcache:
-      externalCacheEntries: [
-        'http://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png'
-        'http://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png'
-        'http://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png'
-        'http://maps.gstatic.com/mapfiles/place_api/icons/wine-71.png'
-      ]
       network: ['*', 'http://*', 'https://*']
 
   server:

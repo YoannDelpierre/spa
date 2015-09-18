@@ -7,12 +7,23 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 var application = require('application');
 
+var CheckInDetailsView = require('views/check_in_details_view');
+var store = require('lib/persistance');
+
 module.exports = Backbone.Router.extend({
   // Déclaration
   // -----------
   routes: {
     // La route racine, pour la page principale
-    '': 'home'
+    '': 'home',
+    'check-in/:id': 'showCheckIn'
+  },
+
+  showCheckIn: function (id) {
+    this.home();
+    CheckInDetailsView.display(
+      store.getCheckIn(id)
+    );
   },
 
   // Gestionnaires

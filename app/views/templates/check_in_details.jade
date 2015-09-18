@@ -6,6 +6,6 @@ include _mixins
       button.close(data-dismiss="modal" aria-hidden="true") ×
       h4.modal-title #{userName} @ #{name} (#{checkInMoment(key)})
     .modal-body
-      blockquote FIXME
+      blockquote= comment
     .modal-footer
       +button('primary')(data-dismiss="modal") OK, cool

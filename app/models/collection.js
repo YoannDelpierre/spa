@@ -17,6 +17,6 @@ module.exports = Backbone.Collection.extend({
   url: '/checkins',
   // comparator into collection
   comparator: function (item1, item2) {
-    return item2.get('stamp') - item1.get('stamp');
+    return item2.get('key') - item1.get('key');
   }
 });
